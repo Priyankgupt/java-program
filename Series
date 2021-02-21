@@ -1,0 +1,61 @@
+import java.io.*; 
+  
+class Main { 
+    public static void main(String[] args) throws IOException 
+    {   
+        BufferedReader r=new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Enter your choice: ");
+        int n=Integer.parseInt(r.readLine());
+        switch(n)
+        {
+          case 1:
+          {
+           int i,f=1;
+           System.out.println("Enter the number: ");
+           int x=Integer.parseInt(r.readLine());
+           for(i=1;i<=n;i++)
+           {
+             f=f*i;
+           }
+           System.out.print(f);
+           break;
+          }
+          case 2:
+          {
+           int i;
+           float s=.00025f;
+           System.out.println("Enter the number: ");
+           int x=Integer.parseInt(r.readLine());
+           for(i=1;i<=n;i++)
+           {
+             s+=1/(4*i);
+           }
+           System.out.print(s);
+           break;
+          }
+          case 3:
+          int f=1,i,j;
+          float s=.00025f;
+          System.out.println("Enter the number: ");
+          int x=Integer.parseInt(r.readLine());
+          for(i=1;i<=n;i++)
+          {
+            for(j=1;j<=i;j++)
+            {
+              f=f*j;
+            }
+            if(i%2==0)
+            {
+              s-=i/f;
+            }
+            else
+            {
+              s+=i/f;
+            }
+          }
+          System.out.print(s);
+          break;
+          default: System.out.print("you did not choose.");
+        }
+    }
+}
